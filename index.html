@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>The game of life</title>
+    <script src="./script.js" defer></script>
+    <style>
+        :root{
+            --tam-li: 100px;
+        }
+        body{
+            height: 100vh;
+        }
+        .main{
+            height: 100%;
+            width: 100%;
+        }
+        ul{
+            display: flex;
+            flex-direction: row;
+
+        }
+        li{
+            list-style: none;
+            width: var(--tam-li);
+            height: var(--tam-li);
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="cont as c">
+    <div class="container">
+        <ul ng-repeat="i in mat">
+            <li ng-repeat="v in i track by $index">
+                {{v}}
+            </li>
+        </ul>
+    </div>
+    <div>
+        <button ng-click="start()">Start</button>
+        <button ng-click="g()">Change</button>
+    </div>
+</body>
+</html>
